@@ -8,6 +8,7 @@ export const bookApi = createApi({
 	}),
 	endpoints: (builder) => ({
 		getAllBooks: builder.query({
+			keepUnusedDataFor: 0,
 		query: (searchTerm, limit = 8 || 0) => ({
 				url: `?q=${searchTerm}&maxResults=${limit}&key=${API_KEY}`,
 			}),
